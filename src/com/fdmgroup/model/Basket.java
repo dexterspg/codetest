@@ -19,8 +19,13 @@ public class Basket {
 		this.items = new HashMap<>();
 	}
 	
-   public void addFruit(Fruit fruit, Integer quantity) {
+   public void addFruit(String name, double price, Integer quantity) {
+	   	   Fruit fruit = new Fruit(name,price);
 		   items.put(fruit, quantity);
+   }
+   
+   public void addFruit(Fruit fruit, Integer quantity) {
+	   items.put(fruit, quantity);
    }
    
 	public String getName() {

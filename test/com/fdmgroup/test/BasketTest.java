@@ -3,16 +3,13 @@ package com.fdmgroup.test;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
 import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.fdmgroup.model.Apple;
 import com.fdmgroup.model.Basket;
 import com.fdmgroup.model.Fruit;
-import com.fdmgroup.model.Peach;
 
 public class BasketTest {
 	
@@ -33,7 +30,7 @@ public class BasketTest {
 	
 	@Test 
 	public void testBasket_ifAppleItemAddedWithSizeOf3_ReturnSizeOfThree(){
-		Apple apple =new Apple();
+		Fruit apple = new Fruit("Apple", 4.53);
 		basket.addFruit(apple, 3);
 		items = basket.getItems();
 		int quantity = 0;
@@ -46,8 +43,8 @@ public class BasketTest {
 	
 	@Test 
 	public void testBasket_ifPeachItemAddedWithTotalSizeOf5_ReturnSizeOfFive(){
-		Apple apple =new Apple();
-		Peach peach = new Peach();
+		Fruit apple = new Fruit("Apple", 4.53);
+		Fruit peach = new Fruit("Peach", 1.32);
 		basket.addFruit(peach, 5);
 		basket.addFruit(apple, 2);
 		items = basket.getItems();

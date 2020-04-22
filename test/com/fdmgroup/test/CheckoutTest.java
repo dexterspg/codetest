@@ -8,11 +8,9 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.fdmgroup.model.Apple;
 import com.fdmgroup.model.Basket;
 import com.fdmgroup.model.Checkout;
 import com.fdmgroup.model.Fruit;
-import com.fdmgroup.model.Peach;
 
 
 
@@ -36,7 +34,7 @@ public class CheckoutTest {
 
 	@Test
 	public void test_CalculatePrice_ReturnsPriceOfBookInBasket_WhenPassedBasketWithOneFruitApple() {
-		Apple apple = new Apple();
+		Fruit apple = new Fruit("Apple", 4.53);
 		basket.addFruit(apple, 1);
 		
 		double unitPriceApple = apple.getPrice(); 
@@ -47,7 +45,7 @@ public class CheckoutTest {
 
 	@Test
 	public void test_CalculatePrice_ReturnsPriceOfBookInBasket_WhenPassedBasketWith2FruitApples() {
-		Apple apple = new Apple();
+		Fruit apple = new Fruit("Apple", 4.53);
 		basket.addFruit(apple, 2);
 		double totalPrice=0.0;
 		
@@ -60,8 +58,8 @@ public class CheckoutTest {
 	
 	@Test
 	public void test_CalculatePrice_ReturnsPriceOfBookInBasket_WhenPassedBasketWith2ApplesAndOnePeach() {
-		Apple apple = new Apple();
-		Peach peach = new Peach();
+		Fruit apple = new Fruit("Apple", 4.53);
+		Fruit peach = new Fruit("Peach", 1.32);
 		
 		double unitPriceApple = apple.getPrice();
 		double unitPricePeach = peach.getPrice();
